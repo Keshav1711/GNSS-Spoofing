@@ -1,0 +1,11 @@
+$ gcc gpssim.c -lm -O3 -o gpssim
+
+> gps-sdr-sim-uhd.py -t gpssim.bin -s 2500000 -x 0
+
+35.7056099708588, 139.69923650056842
+
+> gpssim -e brdc3540.14n -l 35.7056099708588,139.69923650056842,100 -s 2500000
+
+> gps-sdr-sim -e brdc3540.14n -u circle.csv
+
+> tx_samples_from_file --file gpssim.bin --type short --rate 2500000 --freq 1575420000 --gain 0
